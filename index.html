@@ -1,0 +1,103 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prospect CNC</title>
+    <meta name="description"
+        content="Prospect CNC specialises in CNC precision turned parts, sliding head machining, fixed head turning, CNC machining, and volume machine parts." />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <div class="nav-left">
+                <img src="assets/img/logo.jpg" alt="Prospect CNC logo" class="logo" />
+            </div>
+
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="top-images container" aria-label="Feature images">
+            <img class="top-img" src="assets/img/20251216_111225.jpg" alt="CNC machining" />
+            <img class="top-img" src="assets/img/20251216_111547.jpg" alt="CNC turning" />
+            <img class="top-img" src="assets/img/20251216_111721.jpg" alt="Precision turned parts" />
+        </section>
+
+        <section id="about" class="content container">
+            <h1>Precision CNC Manufacturing</h1>
+
+            <p>
+                Prospect CNC manufactures precision turned and machined components for repeat production and volume
+                supply.
+            </p>
+
+            <h2>What we offer</h2>
+            <ul>
+                <li>CNC Precision Turned Parts</li>
+                <li>CNC Sliding Head Machining</li>
+                <li>CNC Fixed Head Turning</li>
+                <li>CNC Machining</li>
+                <li>Volume Machine Parts</li>
+            </ul>
+
+            <h2>Standards & quality</h2>
+            <p>
+                We focus on repeatability, controlled processes, and consistent output. Parts are manufactured to
+                specification with dependable lead times and clear communication.
+            </p>
+        </section>
+
+        <section id="gallery" class="gallery container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img class="gallery-item" src="assets/img/20251216_111807.jpg" alt="Machined component" />
+                <img class="gallery-item" src="assets/img/20251216_111814.jpg" alt="Turned parts" />
+                <img class="gallery-item" src="assets/img/20251216_111829.jpg" alt="CNC part close-up" />
+                <img class="gallery-item" src="assets/img/20251216_111840.jpg" alt="Batch parts" />
+                <img class="gallery-item" src="assets/img/20251216_111855.jpg" alt="Workshop machining" />
+                <img class="gallery-item" src="assets/img/20251216_111907.jpg" alt="Finished CNC parts" />
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <h2>Contact</h2>
+            <div class="contact-details">
+                <div>
+                    <strong>Phone</strong>
+                    <span>+44 (0) 7351 869227</span>
+                </div>
+                <div>
+                    <strong>Email</strong>
+                    <span>info@prospectcnc.co.uk</span>
+                </div>
+                <div>
+                    <strong>Address</strong>
+                    <span>Unit A2, Halesfield 21, Telford, TF7 4NX, UK</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            © <span id="year"></span> Prospect CNC
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
