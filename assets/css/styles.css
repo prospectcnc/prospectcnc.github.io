@@ -28,9 +28,25 @@ body {
   padding: 40px 20px;
 }
 
+/* Menu-link clicks glide to the section, unless the visitor has asked their device to reduce motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Header stays at the top of the screen while scrolling */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: #ffffff;
   border-bottom: 2px solid var(--line);
+}
+
+/* Stop the sticky header covering a section when a menu link jumps to it */
+section[id] {
+  scroll-margin-top: 72px;
 }
 
 .nav {
