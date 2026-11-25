@@ -33,11 +33,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Collect website files
+        # Publish only the files the website needs (not README.md, LICENSE.txt or .github).
+        # If you add a new top-level file or folder that the site uses, add it to this list.
+        run: |
+          mkdir _site
+          cp -r index.html robots.txt favicon.ico assets _site/
+          test -f _site/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

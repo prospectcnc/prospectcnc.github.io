@@ -8,7 +8,9 @@
     <title>Prospect CNC</title>
     <meta name="description"
         content="Prospect CNC specialises in CNC precision turned parts, sliding head machining, fixed head turning, CNC machining, and volume machine parts." />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
@@ -64,18 +66,24 @@
         <section id="gallery" class="gallery container">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <img class="gallery-item" src="assets/img/20251216_111807.jpg"
-                    alt="Batch of turned threaded studs" loading="lazy" />
-                <img class="gallery-item" src="assets/img/20251216_111814.jpg"
-                    alt="Batch of internally threaded turned sleeves" loading="lazy" />
-                <img class="gallery-item" src="assets/img/20251216_111829.jpg"
-                    alt="Batch of turned discs with centre holes" loading="lazy" />
-                <img class="gallery-item" src="assets/img/20251216_111840.jpg"
-                    alt="Batch of small tubular parts with threaded bores" loading="lazy" />
-                <img class="gallery-item" src="assets/img/20251216_111855.jpg"
-                    alt="Batch of cross-drilled turned pins" loading="lazy" />
-                <img class="gallery-item" src="assets/img/20251216_111907.jpg"
-                    alt="Batch of turned pins with knurled heads" loading="lazy" />
+                <a class="gallery-link" href="assets/img/20251216_111807.jpg">
+                    <img class="gallery-item" src="assets/img/20251216_111807.jpg"
+                        alt="Batch of turned threaded studs" loading="lazy" /></a>
+                <a class="gallery-link" href="assets/img/20251216_111814.jpg">
+                    <img class="gallery-item" src="assets/img/20251216_111814.jpg"
+                        alt="Batch of internally threaded turned sleeves" loading="lazy" /></a>
+                <a class="gallery-link" href="assets/img/20251216_111829.jpg">
+                    <img class="gallery-item" src="assets/img/20251216_111829.jpg"
+                        alt="Batch of turned discs with centre holes" loading="lazy" /></a>
+                <a class="gallery-link" href="assets/img/20251216_111840.jpg">
+                    <img class="gallery-item" src="assets/img/20251216_111840.jpg"
+                        alt="Batch of small tubular parts with threaded bores" loading="lazy" /></a>
+                <a class="gallery-link" href="assets/img/20251216_111855.jpg">
+                    <img class="gallery-item" src="assets/img/20251216_111855.jpg"
+                        alt="Batch of cross-drilled turned pins" loading="lazy" /></a>
+                <a class="gallery-link" href="assets/img/20251216_111907.jpg">
+                    <img class="gallery-item" src="assets/img/20251216_111907.jpg"
+                        alt="Batch of turned pins with knurled heads" loading="lazy" /></a>
             </div>
         </section>
 
@@ -88,7 +96,7 @@
                 </div>
                 <div>
                     <strong>Email</strong>
-                    <a href="mailto:info@prospectcnc.co.uk">info@prospectcnc.co.uk</a>
+                    <a href="mailto:info@prospectcnc.co.uk?subject=Website%20enquiry">info@prospectcnc.co.uk</a>
                 </div>
                 <div>
                     <strong>Address</strong>
@@ -107,8 +115,37 @@
         </div>
     </footer>
 
+    <!-- Full-size photo viewer for the gallery (opened by the script below) -->
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+        <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+        <img class="lightbox-img" alt="" />
+        <p class="lightbox-caption"></p>
+    </dialog>
+
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Gallery: show photos full-size in a viewer. In very old browsers the
+        // links simply open the photo on its own instead.
+        (function () {
+            var viewer = document.getElementById("lightbox");
+            if (!viewer || typeof viewer.showModal !== "function") return;
+            var photo = viewer.querySelector(".lightbox-img");
+            var caption = viewer.querySelector(".lightbox-caption");
+            var links = document.querySelectorAll(".gallery-link");
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener("click", function (event) {
+                    event.preventDefault();
+                    var thumb = this.querySelector("img");
+                    photo.src = this.href;
+                    photo.alt = thumb.alt;
+                    caption.textContent = thumb.alt;
+                    viewer.showModal();
+                });
+            }
+            // Tap or click anywhere (photo, background or the X) to close. Esc also closes.
+            viewer.addEventListener("click", function () { viewer.close(); });
+        })();
     </script>
 </body>
 

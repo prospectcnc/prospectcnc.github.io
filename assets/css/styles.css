@@ -133,6 +133,64 @@ section[id] {
   gap: 12px;
 }
 
+/* Gallery photos open full-size when tapped */
+.gallery-link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.gallery-link:hover .gallery-item {
+  opacity: 0.9;
+}
+
+.lightbox {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+  cursor: zoom-out;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-img {
+  display: block;
+  max-width: 94vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+}
+
+.lightbox-caption {
+  margin: 10px 0 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 44px;
+  cursor: pointer;
+}
+
+/* Stop the page scrolling behind an open photo */
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
 .gallery-item {
   height: 220px;
   width: 100%;

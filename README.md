@@ -22,6 +22,13 @@ stay out of image search.
 
 Content updates can be made by editing `index.html` and `assets/css/styles.css`.
 
+Only the website files are published: `index.html`, `robots.txt`, `favicon.ico` and the
+`assets/` folder (the list is in `.github/workflows/static.yml`). If you add a new
+top-level file or folder that the site needs, add it to that list too.
+
+The site icon is drawn in `assets/icons/icon.svg`; `favicon.ico` and
+`assets/icons/apple-touch-icon.png` are rendered from it.
+
 ## Ownership
 
 Built and owned by Prospect CNC Ltd.
