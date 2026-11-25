@@ -1,2 +1,6 @@
+# This site is deliberately kept OUT of search results by the "noindex" tag in
+# index.html. Search engines must be allowed to read index.html to see that tag,
+# so do NOT change this to "Disallow: /" - that hides the tag and the address can
+# then still appear in Google. Photos are blocked so they stay out of image search.
 User-agent: *
-Disallow: /
+Disallow: /assets/img/
