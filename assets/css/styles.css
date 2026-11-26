@@ -65,6 +65,7 @@ section[id] {
 
 .logo {
   height: 38px;
+  width: auto; /* follow the height; the width/height attributes only set the shape */
   max-width: 220px;
   object-fit: contain;
 }

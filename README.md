@@ -29,6 +29,8 @@ top-level file or folder that the site needs, add it to that list too.
 The site icon is drawn in `assets/icons/icon.svg`; `favicon.ico` and
 `assets/icons/apple-touch-icon.png` are rendered from it.
 
+The header logo is `assets/img/logo.svg`.
+
 ## Ownership
 
 Built and owned by Prospect CNC Ltd.
